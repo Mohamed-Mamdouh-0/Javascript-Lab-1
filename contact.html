@@ -1,0 +1,45 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<nav>
+			<a href="Task4.html">Task4</a>
+			<a href="index.html">Index</a>
+		</nav>
+		<br />
+		<div>
+			<span style="font-weight: bold; text-decoration: underline">Name:</span>
+			<span id="nameText"></span>
+		</div>
+		<div>
+			<span style="font-weight: bold; text-decoration: underline"
+				>Birth year:</span
+			>
+			<span id="birthYearText"></span>
+		</div>
+		<div>
+			<span style="font-weight: bold; text-decoration: underline">Age:</span>
+			<span id="ageText"></span>
+		</div>
+		<script>
+			let currDate = new Date().getFullYear();
+			let fName = prompt('type your name');
+
+			while (typeof fName !== 'string' || fName === '') {
+				fName = prompt('type your name');
+			}
+			let BirthDate = prompt('type your BirthDate');
+
+			while (isNaN(Number(BirthDate)) || Number(BirthDate) > 2010) {
+				BirthDate = prompt('type your BirthDate');
+			}
+			document.getElementById('nameText').textContent = fName;
+			document.getElementById('birthYearText').textContent = BirthDate;
+			document.getElementById('ageText').textContent = currDate - BirthDate;
+		</script>
+	</body>
+</html>
